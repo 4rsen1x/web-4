@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Расчет стоимости</title>
+</head>
+<body>
+    <h2>Выберите товары:</h2>
+    <form id="productForm">
+        <input type="checkbox" id="applePie" value="120">
+        <label for="applePie">Пирог с яблоком - 120р</label><br>
+
+        <input type="checkbox" id="chocolateCake" value="80">
+        <label for="chocolateCake">Шоколадный кекс - 80р</label><br>
+
+        <input type="checkbox" id="cheesecake" value="180">
+        <label for="cheesecake">Чизкейк - 180р</label><br>
+
+        <button type="button" onclick="calculateTotal()">Выбрать</button>
+    </form>
+
+    <p>Общая стоимость: <span id="totalPrice">0</span> руб</p>
+
+    <script>
+        function calculateTotal() {
+            let total = 0;
+
+            const checkboxes = document.querySelectorAll('#productForm input[type="checkbox"]');
+            
+            checkboxes.forEach(checkbox => {
+                if (checkbox.checked) {
+                    total += parseInt(checkbox.value);
+                }
+            });
+
+            document.getElementById('totalPrice').textContent = total;
+        }
+    </script>
+</body>
+</html>
