@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Приветствие</title>
+</head>
+<body>
+
+    <label for="firstName">Имя:</label>
+    <input type="text" id="firstName" value="Иван"><br><br>
+
+    <label for="lastName">Фамилия:</label>
+    <input type="text" id="lastName" value="Иванов"><br><br>
+
+    <button type="button" onclick="showGreeting()">Отправить</button>
+
+    <p id="greeting"></p>
+
+    <script>
+        function showGreeting() {
+            const firstName = document.getElementById('firstName').value;
+            const lastName = document.getElementById('lastName').value;
+
+            const greetingMessage = `Привет, ${firstName} ${lastName}!`;
+
+            document.getElementById('greeting').textContent = greetingMessage;
+        }
+    </script>
+
+</body>
+</html>
